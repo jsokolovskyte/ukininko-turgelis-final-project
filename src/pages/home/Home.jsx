@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import "./home.css";
 
 const Home = () => {
@@ -18,8 +19,8 @@ const Home = () => {
         {/* Main end */}
 
         {/* Footer start */}
-        <footer>
-          Footer
+        <footer className="footer-container">
+          <Footer />
         </footer>
         {/* Footer end */}
       </div>

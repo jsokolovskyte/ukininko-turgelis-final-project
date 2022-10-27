@@ -60,3 +60,21 @@
 .active {
     border-bottom: 3px solid green;
 }
+
+.footer-container {
+    min-height: 40px;
+    box-shadow: 0 -15px 10px -15px #485b63;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer-row span {
+     font-size: 12px;
+     color: rgb(0, 128, 0, 0.8);
+}
