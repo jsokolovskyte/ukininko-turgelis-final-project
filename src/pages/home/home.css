@@ -1,0 +1,62 @@
+.header-container {
+    min-height: 120px;
+    box-shadow: 0 15px 10px -15px #485b63;
+    z-index: 1;
+}
+.header-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5px;
+}
+
+.header-top {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+}
+.header-top span {
+ font-size: 15px;  
+ margin: 0 15px;  
+}
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.header-logo-title {
+    text-shadow: 0 0 1px #485b63;
+    font-size: 50px;
+    margin-top: -12px;
+}
+.header-nav a {
+    margin: 0 25px;
+    font-size: 30px;
+}
+.header-action a{
+    position: relative;
+    margin: 0 20px;
+    font-size: 25px;
+}
+
+.header-action a .header-cart-badge {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    padding: 3px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #ec540e;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: white;
+    top: -1px;
+    right: -23px;
+}
+
+.active {
+    border-bottom: 3px solid green;
+}
