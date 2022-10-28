@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./home.css";
+import Slider from "../../components/slider/Slider";
 
 const Home = () => {
     return (
@@ -13,8 +14,8 @@ const Home = () => {
         {/* Header end */}
 
         {/* Main start */}
-        <main>
-          Main
+        <main className="main-container">
+          <Slider />
         </main>
         {/* Main end */}
 
