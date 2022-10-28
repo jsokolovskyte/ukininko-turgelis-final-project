@@ -62,7 +62,7 @@ const Latest = () => {
 
                     <div className="sellers-group">
                         <div className="sellers-header">
-                            <img src="./assets/images/sellers/seller3.png" alt="" />
+                            <img src="./assets/images/sellers/person4.png" alt="" />
                         </div>
                         <div className="sellers-body">
                             <Link to="/">Zigmas Žiogas <FontAwesomeIcon icon={faEye} /></Link>

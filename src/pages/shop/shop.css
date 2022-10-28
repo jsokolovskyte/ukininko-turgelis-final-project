@@ -1,0 +1,185 @@
+.filter-row {
+    padding: 50px 15px;
+}
+
+.filter-row .filter-col:first-child {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 80px;
+}
+
+.filter-row .filter-col:first-child .filter-group:first-child button {
+    margin: 0 15px;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.filter-row .filter-col:first-child .filter-group:first-child button:hover {
+    background-color: whitesmoke;
+    color: rgba(20, 55, 20, 0.677);
+}
+
+.filter-row .filter-col:first-child .filter-group:last-child input {
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 2px #2f7457;
+    width: 150px;
+    outline: none;
+    letter-spacing: 1.2px;
+    transition: all 0.7s;
+}
+
+.filter-row .filter-col:first-child .filter-group:last-child input:focus {
+    width: 300px;
+}
+
+.filter-row .filter-col:first-child .filter-group:last-child button {
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.filter-row .filter-col:first-child .filter-group:last-child button:hover {
+    background-color: whitesmoke;
+    color:rgba(20, 55, 20, 0.677);
+}
+
+.filter-cards  {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+    margin-bottom: 50px;
+}
+
+.filter-card { 
+    width: 250px;
+    border-bottom: 1px dashed black;
+    padding: 5px;
+    transition: all 0.5s;
+}
+
+.filter-card:hover {
+    transform: scale(1.07);
+}
+
+.card-header {
+    height: 120px;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.card-header img{
+    width: 140px;
+}
+
+.card-header .card-sellers {
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    width: 50px;
+    border-radius: 50px;
+    box-shadow: 0 0 2px #2f5f74;
+    filter: drop-shadow(0 0 1px #485b63);
+    height: auto;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-body a {
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 0 0 1px #2f5f74;
+    margin: 5px;
+}
+
+.card-body span.category {
+    background-color: rgba(75, 151, 75, 0.727);
+    width: max-content;
+    padding: 3px 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: whitesmoke;
+    text-shadow: 0 0 1px whitesmoke;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.card-body span.price {
+    font-weight: bold;
+}
+
+.filter-row .filter-col:last-child .card-footer {
+    margin: 10px 0;
+}
+
+.filter-row .filter-col:last-child .card-footer button {
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+
+}
+.filter-row .filter-col:last-child .card-footer button:hover {
+    background-color: whitesmoke;
+    color:rgba(20, 55, 20, 0.677);
+}
+
+.filter-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-pagination ul {
+    display: flex;
+}
+
+.filter-pagination ul li {
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 0.5px solid #485b63;
+}
+
+.filter-pagination ul li a{
+    padding: 10px;
+    font-weight: bold;
+}
+
+.pagi-active {
+    background-color: rgba(75, 151, 75, 0.727);
+    color: whitesmoke;
+}
+
+.filter-pagination ul li:hover{
+    background-color:rgba(75, 151, 75, 0.727);
+}
+
