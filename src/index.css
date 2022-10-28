@@ -31,6 +31,8 @@ body {
 
 main {
   background-color: #f5fffa;
+  display: flex;
+  flex-direction: column;
 }
 
 button {
