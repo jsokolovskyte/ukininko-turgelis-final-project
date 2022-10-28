@@ -4,6 +4,7 @@ import Footer from "../../components/footer/Footer";
 import "./home.css";
 import Slider from "../../components/slider/Slider";
 import Latest from "../../components/latest/Latest";
+import Socials from "../../components/socials/Socials";
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
         <main className="main-container">
           <Slider />
           <Latest />
+          <Socials />
         </main>
         {/* Main end */}
 

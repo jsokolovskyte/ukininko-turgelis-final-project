@@ -16,7 +16,7 @@ const Latest = () => {
                         <div className="latest-body">
                             <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="category"> Fruit</span>
-                            <span className="price"> 0.89(€/kg)</span>
+                            <span className="price"> 1.49(€/kg)</span>
                             
                         </div>
                     </div>

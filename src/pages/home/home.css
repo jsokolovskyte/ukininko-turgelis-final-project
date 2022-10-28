@@ -210,19 +210,19 @@
 }
 
 .sellers-group {
-    width: 280px;
+    width: 310px;
     box-shadow: 0 0 15px #485b63;
 }
 
 .sellers-header {
-    height: 280px;
+    height: 320px;
     display: grid;
     place-items: center;
     padding: 5px;
 }
 
 .sellers-header img{
-    width: 270px;
+    width: 300px;
     margin: 5px;
     height: auto;
 }
@@ -268,4 +268,39 @@
     display: block;
     margin: 5px auto;
     font-size: 14px;
+}
+
+.socials-row {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(69, 152, 69, 0.677);
+    -webkit-clip-path: polygon(0 31%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 31%, 100% 0, 100% 100%, 0 100%);
+}
+.socials-row h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.socials-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.socials-group a{
+    transition: all 0.5s;
+}
+
+.socials-group a:hover{
+    transform: scale(1.1);
+}
+
+.socials-group img {
+    width: 60px;
+    height: auto;
 }
