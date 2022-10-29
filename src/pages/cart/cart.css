@@ -1,0 +1,124 @@
+.cart-row {
+    margin: 50px 0;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 45px;
+}
+
+.cart-items {
+    margin: 40px 0;
+    display: flex;
+    padding: 0 15px;
+}
+
+.cart-col:first-child {
+    flex: 2;
+}
+
+.cart-col:last-child {
+    flex: 1;
+}
+
+.cart-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card-footer-cart button{
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(202, 77, 9);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.card-footer-cart button:hover{
+    background-color: whitesmoke;
+    color: rgb(202, 77, 9);
+}
+
+.card-action {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card-action button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    margin: 0 15px;
+    transition: all 0.5s;
+}
+
+.card-action button:hover {
+    color: rgba(75, 151, 75, 0.727);
+}
+
+.card-action .quantity {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+}
+
+.cart-bill {
+    background-color: rgba(75, 151, 75, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.bill-title {
+    text-transform: uppercase;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bill-groups {
+    margin: 30px 0;
+}
+
+.bill-group {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.448);
+    padding: 2px 0;
+}
+
+.bill-btn {
+    margin-top: 30px;
+}
+
+.bill-btn button {
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(75, 151, 75, 0.727);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.bill-btn button:hover {
+    background-color: whitesmoke;
+    color:  rgba(75, 151, 75, 0.727);
+}
+

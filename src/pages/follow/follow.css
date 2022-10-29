@@ -19,7 +19,7 @@
     text-transform: uppercase;
     letter-spacing: 1.2px;
     color: whitesmoke;
-    text-shadow: 0 0 1px whitesmoke;
+    text-shadow: 0 0 1px;
     border-radius: 5px;
     font-size: 17px;
     display: block;
@@ -35,5 +35,5 @@
 }
 
 .filter-pagination {
-    margin: 120px 0 50px 0;
+    margin: 120px 0 60px 0;
 }
