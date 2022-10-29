@@ -47,7 +47,7 @@ const Filter = () => {
                         <div className="card-body">
                             <Link to="/">Tomato <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="category"> Vegetable</span>
-                            <span className="price"> 0.89(€/kg)</span>
+                            <span className="price"> 0.99(€/kg)</span>
                         </div>
                         <div className="card-footer">
                             <button>Add to cart</button>
