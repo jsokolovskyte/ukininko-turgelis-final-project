@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
+import Account from './pages/account/Account';
 import Cart from './pages/cart/Cart';
 import Follow from './pages/follow/Follow';
 import Login from './pages/forms/Login';
@@ -24,6 +25,7 @@ function App() {
       <Route path='/register' element={ <Register />} />
       <Route path='/follow' element={ <Follow />} />
       <Route path='/cart' element={ <Cart />} />
+      <Route path='/account' element={ <Account />} />
     </Routes>
    </Router>
    </>

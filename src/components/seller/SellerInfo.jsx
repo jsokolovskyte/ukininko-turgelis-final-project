@@ -27,9 +27,10 @@ const Seller = () => {
                 <h2 className="seller-title">All products of the Seller Kotryna Kartutė</h2>
                 <div className="seller-products">
                 <div className="filter-cards">
-                <div className="filter-card">
+                    <div className="filter-card">
                         <div className="card-header">
                             <img src="./assets/images/products/melon.png" alt="" />
+                            <Link to="/"> <img className="card-sellers" src="./assets/images/sellers/person1.png" alt="" /></Link>
                         </div>
                         <div className="card-body">
                             <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
