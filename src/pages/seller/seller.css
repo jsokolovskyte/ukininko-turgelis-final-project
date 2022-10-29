@@ -1,0 +1,95 @@
+.seller-row {
+    display: flex;
+    margin: 50px;
+}
+
+.seller-col:first-child {
+    flex: 1;
+}
+
+.seller-info {
+    width: 100%;
+}
+
+.seller-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seller-header img {
+    width: 80%;
+    height: auto;
+}
+
+.seller-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 4px;
+}
+
+.seller-body span:first-child {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.seller-col:last-child {
+    flex: 3;
+}
+
+.seller-footer {
+    margin-top: 15px;
+}
+
+.follow {
+    background-color: rgba(75, 151, 75, 0.727);
+    font-family: 'Courier New', Courier, monospace;
+    width: max-content;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: whitesmoke;
+    text-shadow: 0 0 1px whitesmoke;
+    border-radius: 5px;
+    font-size: 17px;
+    display: block;
+    margin: 5px auto;
+    cursor: pointer;
+    box-shadow: 0 0 2px #486355;
+    transition: all 0.5s;
+}
+
+.follow:hover {
+    background-color: whitesmoke;
+    color: rgba(75, 151, 75, 0.727);
+}
+
+.seller-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.card-footer button {
+    display: block;
+    margin: 0 auto;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.card-footer button:hover {
+    background-color: whitesmoke;
+    color:rgba(20, 55, 20, 0.677);
+}

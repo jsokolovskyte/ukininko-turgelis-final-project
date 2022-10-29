@@ -19,7 +19,7 @@ const SellFilters = () => {
                             <img src="./assets/images/sellers/person1.png" alt="" />
                         </div>
                         <div className="sell-fill-body">
-                            <Link to="/">Kotryna Kartutė <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to="/sellers:id">Kotryna Kartutė <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
                             <span className="date">Member since: 2022.11.01</span>
                             
@@ -31,7 +31,7 @@ const SellFilters = () => {
                             <img src="./assets/images/sellers/person2.png" alt="" />
                         </div>
                         <div className="sell-fill-body">
-                            <Link to="/">Sigita Sagutė <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to="/sellers:id">Sigita Sagutė <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
                             <span className="date">Member since: 2022.10.31</span>
                             
@@ -43,7 +43,7 @@ const SellFilters = () => {
                             <img src="./assets/images/sellers/person4.png" alt="" />
                         </div>
                         <div className="sell-fill-body">
-                            <Link to="/">Zigmas Žiogas <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to="/sellers:id">Zigmas Žiogas <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
                             <span className="date">Member since: 2022.10.31</span>
                             
@@ -55,7 +55,7 @@ const SellFilters = () => {
                             <img src="./assets/images/sellers/seller3.png" alt="" />
                         </div>
                         <div className="sell-fill-body">
-                            <Link to="/">Benas Penas <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to="/sellers:id">Benas Penas <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
                             <span className="date">Member since: 2022.09.31</span>
                             

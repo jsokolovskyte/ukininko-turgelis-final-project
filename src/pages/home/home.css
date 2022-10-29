@@ -242,6 +242,7 @@
 }
 
 .sellers-body span.follow {
+    font-family: 'Courier New', Courier, monospace;
     background-color: rgba(75, 151, 75, 0.727);
     width: max-content;
     padding: 5px 8px;
