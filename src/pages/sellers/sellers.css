@@ -1,0 +1,127 @@
+.sell-fill-row .sell-fill-col:first-child {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 60px 0;
+
+}
+
+.sell-fill-row .sell-fill-col:first-child button {
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.sell-fill-row .sell-fill-col:first-child button:hover {
+    background-color: whitesmoke;
+    color: rgba(20, 55, 20, 0.677);
+}
+
+.sell-fill-row .sell-fill-col:first-child input {
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 2px #2f7457;
+    width: 150px;
+    outline: none;
+    letter-spacing: 1.2px;
+    transition: all 0.7s;
+}
+
+.sell-fill-row .sell-fill-col:first-child input:focus {
+    width: 300px;
+}
+
+.sell-fill-row .sell-fill-col:first-child button {
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+}
+.sell-fill-row .sell-fill-col:first-child .filter-group:last-child button:hover {
+    background-color: whitesmoke;
+    color:rgba(20, 55, 20, 0.677);
+}
+
+.sell-fill-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: fit-content;
+}
+
+.sell-fill-group {
+    width: 310px;
+    box-shadow: 0 0 15px #485b63;
+}
+
+.sell-fill-header {
+    height: 270px;
+    display: grid;
+    place-items: center;
+    padding: 5px;
+}
+
+.sell-fill-header img{
+    width: 250px;
+    margin: 5px;
+    height: auto;
+}
+.sell-fill-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sell-fill-body a {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 3px;
+    text-shadow: 0 0 1px #2f5f74;
+    margin-bottom: 5px;
+}
+
+.sell-fill-body span.follow {
+    background-color: rgba(75, 151, 75, 0.727);
+    width: max-content;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: whitesmoke;
+    text-shadow: 0 0 1px whitesmoke;
+    border-radius: 5px;
+    font-size: 17px;
+    display: block;
+    margin: 5px auto;
+    cursor: pointer;
+    box-shadow: 0 0 2px #486355;
+    transition: all 0.5s;
+}
+
+.sell-fill-body span.follow:hover {
+    background-color: whitesmoke;
+    color: rgba(75, 151, 75, 0.727);
+}
+
+.sell-fill-body span.date {
+    font-weight: bold;
+    display: block;
+    margin: 5px auto;
+    font-size: 14px;
+}
+
+.sell-fill-row .sell-fill-col .filter-pagination {
+    margin: 80px 0 50px 0;
+}
