@@ -53,15 +53,47 @@
     text-align: center;
 }
 
-.card-footer button:last-child {
+.card-footer-account button:first-child {
+    margin: 0 auto;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.card-footer-account button:first-child:hover {
+    color: rgba(20, 55, 20, 0.677);
+    background-color: whitesmoke;
+}
+
+.card-footer-account button:last-child {
+    margin: 0 auto;
     background-color:rgb(202, 77, 9);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
 }
 
-.card-footer button:last-child:hover {
+.card-footer-account button:last-child:hover {
     color:rgb(202, 77, 9);
+    background-color: whitesmoke;
 }
 
-.card-footer {
+.card-footer-account {
     display: flex;
     justify-content: space-between;
 }

@@ -10,8 +10,8 @@ const Filter = () => {
             <div className="filter-col">
                 <div className="filter-group">
                     <button>All</button>
-                    <button>Fruits</button>
-                    <button>Vegetables</button>
+                    <button>Fruit</button>
+                    <button>Vegetable</button>
 
                 </div>
 

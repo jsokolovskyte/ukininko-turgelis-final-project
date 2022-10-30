@@ -1,4 +1,4 @@
-import { faEye, faPencil, faRefresh, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faPencil, faRefresh, faTrash, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ const AccountUser = () => {
             <div className="account-groups">
                 <div className="account-group">
                     <img src="./assets/images/sellers/person2.png" alt="" />
-                    <button className="account-image">Change Image</button>
+                    <button className="account-image">Upload <FontAwesomeIcon icon={faUpload} /></button>
                     <div className="form-row">
 
                     <div className="form-group">
@@ -52,7 +52,7 @@ const AccountUser = () => {
                             <span className="category"> Fruit</span>
                             <span className="price"> 1.49(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
 
@@ -68,7 +68,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.99(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -83,7 +83,7 @@ const AccountUser = () => {
                             <span className="category"> Fruit</span>
                             <span className="price"> 0.49(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -98,7 +98,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.49(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -113,7 +113,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.39(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -128,7 +128,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.79(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -143,7 +143,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.39(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -158,7 +158,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 0.49(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -173,7 +173,7 @@ const AccountUser = () => {
                             <span className="category"> Fruit</span>
                             <span className="price"> 1.49(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -188,7 +188,7 @@ const AccountUser = () => {
                             <span className="category"> Fruit</span>
                             <span className="price"> 0.89(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
@@ -203,7 +203,7 @@ const AccountUser = () => {
                             <span className="category"> Vegetable</span>
                             <span className="price"> 1.39(€/kg)</span>
                         </div>
-                        <div className="card-footer">
+                        <div className="card-footer-account">
                             <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
                             <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
                         </div>
