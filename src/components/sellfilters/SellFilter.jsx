@@ -16,7 +16,7 @@ const SellFilter = () => {
 
     const displaySellers = seller.slice(pagesVisited, pagesVisited + sellersPerPage).map((user) => (
 
-        <div className="sell-fill-group">
+        <div className="sell-fill-group" key={user._id}>
                 <div className="sell-fill-header">
                     <img src={user.image} alt={user.name} />
                 </div>
