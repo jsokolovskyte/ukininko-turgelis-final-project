@@ -11,7 +11,7 @@ const SellFilter = () => {
 
     const [seller, setSeller] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
-    const sellersPerPage = 2;
+    const sellersPerPage = 2; //for now, change later to 10
     const pagesVisited = pageNumber * sellersPerPage;
 
     const displaySellers = seller.slice(pagesVisited, pagesVisited + sellersPerPage).map((user) => (
