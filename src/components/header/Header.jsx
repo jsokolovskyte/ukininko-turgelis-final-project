@@ -2,9 +2,20 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faHome, faLock, faPhone, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons'
 import '../../pages/home/home.css'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const navigate = useNavigate();
+
+    const userInfo = localStorage.getItem("userInfo");
+
+    const signouthandler = () => {
+        localStorage.removeItem("userInfo");
+        alert("You have logged out");
+        navigate("/login");
+    }
+
     return (
         <div className="header-row">
             <div className="header-top">
@@ -24,13 +35,17 @@ const Header = () => {
 
                 <div className="header-action">
 
-                    <Link to="/account"><FontAwesomeIcon icon={faHome}/></Link>
+                    {
+                    userInfo ? <Link to="/account"><FontAwesomeIcon icon={faHome}/></Link> : <Link to="/"><FontAwesomeIcon icon={faHome}/></Link>
+                    }
 
                     <Link to="/follow"><FontAwesomeIcon icon={faUser} /><span className="header-cart-badge">0</span></Link>
 
                     <Link to="/cart"><FontAwesomeIcon icon={faShoppingBag} /><span className="header-cart-badge">0</span></Link>
 
-                    <Link to="/login"><FontAwesomeIcon icon={faLock} />Login</Link>
+                    {
+                        userInfo ? (<span className="logout" to="#signout" onClick={signouthandler}><FontAwesomeIcon icon={faLock} />Logout</span>) : (<Link to="/login"><FontAwesomeIcon icon={faLock} />Login</Link>)
+                    }
 
                 </div>
             </div> 

@@ -25,24 +25,24 @@
     margin: 0 auto;
 }
 
-.account-image {
+.account-button {
     display: block;
     margin: 0 auto;
     background-color: rgba(75, 151, 75, 0.727);
     color: whitesmoke;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 15px;
     border: none;
     box-shadow: 0 0 3px #2f5f74;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     transition: all 0.5s;
-    margin-top: 10px;
-    margin-bottom: -30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.account-image:hover {
+.account-button:hover {
     color: rgba(75, 151, 75, 0.727);
     background-color: whitesmoke;
 }
@@ -115,4 +115,52 @@
 
 .account-orders a:hover {
     filter: drop-shadow(0 0 2px green);
+}
+
+.form-row.account {
+    min-height: unset;
+}
+
+.form-image {
+    position: relative;
+}
+
+.form-image label {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgba(75, 151, 75, 0.727);
+    filter: drop-shadow(0 0 1px green);
+    transition: all 0.5s;
+}
+
+.form-image label:hover {
+    color: rgba(100, 200, 100, 0.727);
+}
+
+.btn-upload {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-upload button{
+    margin: 0 auto;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 3px #2f5f74;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    margin-top: 10px;
+}
+
+.btn-upload button:hover {
+    background-color: whitesmoke;
+    color: rgba(20, 55, 20, 0.677);
 }
