@@ -122,7 +122,7 @@
 
 .latest-row {
     padding: 20px 5px;
-    min-height: 100vh;
+    min-height: calc(100vh-40vh);
     display: flex;
 }
 
@@ -211,19 +211,19 @@
 }
 
 .sellers-group {
-    width: 310px;
+    width: 290px;
     box-shadow: 0 0 15px #485b63;
 }
 
 .sellers-header {
-    height: 320px;
+    height: 300px;
     display: grid;
     place-items: center;
     padding: 5px;
 }
 
 .sellers-header img{
-    width: 300px;
+    width: 270px;
     margin: 5px;
     height: auto;
 }

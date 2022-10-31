@@ -1,21 +1,31 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import useFetch from "../../hooks/useFetch.js";
 
-const Seller = () => {
+const SellerInfo = () => {
+
+    //to find user's id
+    const location = useLocation();
+    // console.log(location);
+    const id = location.pathname.split(":")[1];
+    console.log(id)
+
+    const {seller, reFetch} = useFetch(`/api/users/${id}`)
+    console.log(seller);
+
     return (
         <div className="seller-row">
             <div className="seller-col">
                 <div className="seller-info">
                     <div className="seller-header">
-                        <img src="./assets/images/sellers/person1.png" alt="" />
+                        <img src={seller.image} alt={seller.name} />
                     </div>
                     <div className="seller-body">
-                        <span>Kotryna Kartutė</span>
-                        <span>Laukų gatvė 1, Laukuva</span>
-                        <span>kotryna.kartute@ukis.lt</span>
-                        <span>+37061111111</span>
+                        <span>{seller.name}</span>
+                        <span>{seller.email}</span>
+                        <span>{seller.address}</span>
+                        <span>{seller.phone}</span>
                     </div>
                     <div className="seller-footer">
                         <span className="follow"> Follow</span>
@@ -24,13 +34,12 @@ const Seller = () => {
             </div>
 
             <div className="seller-col">
-                <h2 className="seller-title">All products of the Seller Kotryna Kartutė</h2>
+                <h2 className="seller-title">All products of the Seller {seller.name}</h2>
                 <div className="seller-products">
                 <div className="filter-cards">
                     <div className="filter-card">
                         <div className="card-header">
                             <img src="./assets/images/products/melon.png" alt="" />
-                            <Link to="/"> <img className="card-sellers" src="./assets/images/sellers/person1.png" alt="" /></Link>
                         </div>
                         <div className="card-body">
                             <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
@@ -197,4 +206,4 @@ const Seller = () => {
     )
 }
 
-export default Seller
+export default SellerInfo

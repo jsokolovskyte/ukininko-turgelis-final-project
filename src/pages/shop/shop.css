@@ -173,13 +173,3 @@
     padding: 10px;
     font-weight: bold;
 }
-
-.pagi-active {
-    background-color: rgba(75, 151, 75, 0.727);
-    color: whitesmoke;
-}
-
-.filter-pagination ul li:hover{
-    background-color:rgba(75, 151, 75, 0.727);
-}
-

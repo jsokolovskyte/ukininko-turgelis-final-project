@@ -93,3 +93,52 @@
     background-color: whitesmoke;
     color:rgba(20, 55, 20, 0.677);
 }
+
+.pagi-active {
+    background-color: rgba(75, 151, 75, 0.727);
+    color: whitesmoke;
+}
+
+.filter-pagination ul li:hover{
+    background-color:rgba(75, 151, 75, 0.727);
+}
+
+.pagi-item {
+    padding: 5px;
+    border: 0.5px solid green;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.pagi-item:hover {
+    background-color: rgba(75, 151, 75, 0.727);
+    cursor: pointer;
+}
+
+.pagi-link {
+    padding: 15px;
+    font-weight: bold;
+}
+
+.pagi-item:hover .pagi-link {
+    color: whitesmoke;
+}
+
+.pagi-active-link {
+    color: whitesmoke;
+}
+
+.disabledPagi {
+    background-color: whitesmoke;
+}
+
+.disabledPagi .pagi-link {
+    color: #818181;
+}
+
+.disabledPagi:hover {
+    background-color: whitesmoke;
+}
+
+.disabledPagi:hover .pagi-link {
+    color:#818181;
+}

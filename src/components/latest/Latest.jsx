@@ -1,9 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 const Latest = () => {
+
+    const location = useLocation();
+    console.log(location.pathname);
+
+    const [users, setUsers] = useState([]); //default is empty
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+
+            const result = await axios.get("/api/users/all");
+            console.log(result.data);
+            setUsers(result.data);
+
+        }
+
+        fetchData();
+
+    }, []);
+
     return (
         <div className="latest-row">
             <div className="latest-col">
@@ -17,7 +40,6 @@ const Latest = () => {
                             <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="category"> Fruit</span>
                             <span className="price"> 1.49(€/kg)</span>
-                            
                         </div>
                     </div>
 
@@ -36,41 +58,22 @@ const Latest = () => {
             <div className="latest-col">
                 <h2>newly registered sellers. check them out!</h2>
                 <div className="latest-sellers">
-                    <div className="sellers-group">
-                        <div className="sellers-header">
-                            <img src="./assets/images/sellers/person1.png" alt="" />
-                        </div>
-                        <div className="sellers-body">
-                            <Link to="/">Kotryna Kartutė <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="follow"> Follow</span>
-                            <span className="date">Member since: 2022.11.01</span>
-                            
-                        </div>
-                    </div>
 
-                    <div className="sellers-group">
-                        <div className="sellers-header">
-                            <img src="./assets/images/sellers/person2.png" alt="" />
-                        </div>
-                        <div className="sellers-body">
-                            <Link to="/">Sigita Sagutė <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="follow"> Follow</span>
-                            <span className="date">Member since: 2022.10.31</span>
-                            
-                        </div>
-                    </div>
+                    {/*I only want last 6 members, not all*/}
+                    {users.slice(-6).map((user) => (
 
-                    <div className="sellers-group">
+                    <div className="sellers-group" key={user._id}>
                         <div className="sellers-header">
-                            <img src="./assets/images/sellers/person4.png" alt="" />
+                            <img src={user.image} alt={user.name} />
                         </div>
                         <div className="sellers-body">
-                            <Link to="/">Zigmas Žiogas <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to={`seller:${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
-                            <span className="date">Member since: 2022.10.31</span>
-                            
+                            <span className="date">Member since: {(user.createdAt).slice(0, 10)}</span>
                         </div>
                     </div>
+                    
+                    ))}
 
                 </div>
             </div>
