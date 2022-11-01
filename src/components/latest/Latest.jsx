@@ -8,10 +8,9 @@ import axios from "axios";
 
 const Latest = () => {
 
-    const location = useLocation();
-    console.log(location.pathname);
-
     const [users, setUsers] = useState([]); //default is empty
+    const [products, setProducts] = useState([]); //default is empty
+
 
     useEffect(() => {
 
@@ -20,6 +19,10 @@ const Latest = () => {
             const result = await axios.get("/api/users/all");
             console.log(result.data);
             setUsers(result.data);
+
+            const res = await axios.get("/api/products");
+            console.log(res.data);
+            setProducts(res.data);
 
         }
 
@@ -32,29 +35,22 @@ const Latest = () => {
             <div className="latest-col">
                 <h2>new fresh products</h2>
                 <div className="latest-products">
-                    <div className="latest-group">
-                        <div className="latest-header">
-                            <img src="./assets/images/products/melon.png" alt="" />
-                        </div>
-                        <div className="latest-body">
-                            <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Fruit</span>
-                            <span className="price"> 1.49(€/kg)</span>
-                        </div>
-                    </div>
 
-                    <div className="latest-group">
+                    {products.slice(-3).map((product) => (
+                    <div className="latest-group" key={product._id}>
                         <div className="latest-header">
-                            <img src="./assets/images/products/tomato.png" alt="" />
+                            <img src={product.image} alt={product.name} />
                         </div>
                         <div className="latest-body">
-                            <Link to="/">Tomato <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.99(€/kg)</span>
+                            <Link to={`${product.slug}`}>{product.name} <FontAwesomeIcon icon={faEye} /></Link>
+                            <span className="category"> {product.category}</span>
+                            <span className="price"> {(product.price).toFixed(2)}(€/kg)</span>
                         </div>
                     </div>
+                    ))}
                 </div>
             </div>
+
             <div className="latest-col">
                 <h2>newly registered sellers. check them out!</h2>
                 <div className="latest-sellers">
@@ -67,7 +63,7 @@ const Latest = () => {
                             <img src={user.image} alt={user.name} />
                         </div>
                         <div className="sellers-body">
-                            <Link to={`seller:${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
+                            <Link to={`seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
                             <span className="follow"> Follow</span>
                             <span className="date">Member since: {(user.createdAt).slice(0, 10)}</span>
                         </div>

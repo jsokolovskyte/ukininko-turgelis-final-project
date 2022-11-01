@@ -1,9 +1,12 @@
+//created to use but product/user id's somehow overwrite eachother?:')
+
 import { useEffect, useState } from "react"
 import axios from "axios"
 
 
 const useFetch = (url) => {
     const [seller, setSeller] = useState([]);
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
 
@@ -13,6 +16,9 @@ const useFetch = (url) => {
 
                 const res = await axios.get(url);
                 setSeller(res.data);
+
+                const result = await axios.get(url);
+                setProduct(result.data);
 
             } catch(error){
                 console.log("Error!");
@@ -31,13 +37,16 @@ const useFetch = (url) => {
             const res = await axios.get(url);
             setSeller(res.data);
 
+            const result = await axios.get(url);
+            setProduct(result.data);
+
         } catch(error){
             console.log("Error!");
         }
 
     };
 
-    return {seller, reFetch};
+    return {seller, product, reFetch};
 }
 
 export default useFetch;

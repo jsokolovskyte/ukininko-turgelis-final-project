@@ -74,7 +74,7 @@ const Sign = () => {
 
                 <div className="form-group">
                     <label htmlFor="phone">Phone</label>
-                    <input required onChange={(e) => setPhone(e.target.value)} type="number" id="phone" />
+                    <input required onChange={(e) => setPhone(e.target.value)} type="string" id="phone" />
                 </div>
 
                 <div className="form-btn">

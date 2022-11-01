@@ -143,7 +143,6 @@
 }
 
 .latest-col:first-child h2 {
-    color: #485b63;
     font-size: 43px;
     letter-spacing: 1px;
     margin-bottom: 15px;
@@ -152,7 +151,6 @@
 .latest-col:last-child h2 {
     text-align: center;
     font-size: 43px;
-    color: #485b63;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }

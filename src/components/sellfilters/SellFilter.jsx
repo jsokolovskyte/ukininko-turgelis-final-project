@@ -18,7 +18,7 @@ const SellFilter = ({seller}) => {
                     <img src={user.image} alt={user.name} />
                 </div>
                 <div className="sell-fill-body">
-                <Link to={`../seller:${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
+                <Link to={`../seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
                     <span className="follow"> Follow</span>
                     <span className="date">Member since: {(user.createdAt).slice(0, 10)}</span>
                 </div>
@@ -28,9 +28,7 @@ const SellFilter = ({seller}) => {
     const pageCount = Math.ceil(seller.length / sellersPerPage);
 
     const handlePageClick = ({selected}) => {
-
         setPageNumber(selected);
-
     }
 
     return (
@@ -57,7 +55,6 @@ const SellFilter = ({seller}) => {
         breakClassName = {"pagi-item"}
         breakLinkClassName = {"pagi-link"}
         disabledClassName = {"disabledPagi"}
-
       />  
         </>
     )

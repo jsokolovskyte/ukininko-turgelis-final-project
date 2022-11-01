@@ -1,18 +1,40 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useLocation } from "react-router-dom";
-import useFetch from "../../hooks/useFetch.js";
+import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 const SellerInfo = () => {
 
-    //to find user's id
-    const location = useLocation();
-    // console.log(location);
-    const id = location.pathname.split(":")[1];
-    console.log(id)
+    const [seller, setSeller] = useState([]);
 
-    const {seller} = useFetch(`/api/users/${id}`)
-    console.log(seller);
+    const params = useParams();
+    const {id} = params;
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+
+            try {
+                const result = await axios.get(`/api/users/user/${id}`);
+                console.log(result.data)
+                setSeller(result.data)
+            } catch(error) {
+                console.log("error!")
+            }
+        }
+        fetchData();
+    }, [id])
+
+    // //to find user's id
+    // const location = useLocation();
+    // // console.log(location);
+    // const id = location.pathname.split(":")[1];
+    // console.log(id)
+
+    // const {seller} = useFetch(`/api/users/${id}`)
+    // console.log(seller);
 
     return (
         <div className="seller-row">
