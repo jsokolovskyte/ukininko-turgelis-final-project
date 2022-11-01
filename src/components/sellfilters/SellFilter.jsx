@@ -1,15 +1,12 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import ReactPaginate from "react-paginate";
 
-const SellFilter = () => {
+const SellFilter = ({seller}) => {
 
-    const [seller, setSeller] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
     const sellersPerPage = 2; //for now, change later to 10
     const pagesVisited = pageNumber * sellersPerPage;
@@ -27,21 +24,6 @@ const SellFilter = () => {
                 </div>
             </div>
         ));
-
-
-    useEffect(() => {
-
-        const fetchData = async () => {
-
-            const result = await axios.get("/api/users/all");
-            console.log(result.data);
-            setSeller(result.data);
-
-        }
-
-        fetchData();
-
-    }, []);
 
     const pageCount = Math.ceil(seller.length / sellersPerPage);
 

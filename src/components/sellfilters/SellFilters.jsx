@@ -1,18 +1,41 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SellFilter from "./SellFilter";
+import axios from "axios";
 
 const SellFilters = () => {
+
+    const [seller, setSeller] = useState([]);
+    const [query, setQuery] = useState("");
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+
+            const result = await axios.get("/api/users/all");
+            console.log(result.data);
+            setSeller(result.data);
+
+        }
+
+        fetchData();
+
+    }, []);
+
+    const keys = ["name", "email", "address"];
+
+    const search = () => {
+        return seller.filter((item) => keys.some((key) => item[key].toLowerCase().includes(query)));
+    };
+
     return (
         <div className="sell-fill-row">
             <div className="sell-fill-col">
-                <input type="search" placeholder="Search..." />
-                <button> <FontAwesomeIcon icon={faSearch} /> </button>
+                <input type="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
+
             </div>
 
             <div className="sell-fill-col">
-                <SellFilter />
+                <SellFilter seller={search(SellFilter)}/>
             </div>
         </div>
     )

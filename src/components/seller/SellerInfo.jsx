@@ -11,7 +11,7 @@ const SellerInfo = () => {
     const id = location.pathname.split(":")[1];
     console.log(id)
 
-    const {seller, reFetch} = useFetch(`/api/users/${id}`)
+    const {seller} = useFetch(`/api/users/${id}`)
     console.log(seller);
 
     return (
