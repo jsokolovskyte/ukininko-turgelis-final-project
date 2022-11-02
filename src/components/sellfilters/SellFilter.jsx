@@ -1,29 +1,13 @@
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import SellFilterInfo from "./SellFilterInfo";
 
 const SellFilter = ({seller}) => {
 
     const [pageNumber, setPageNumber] = useState(0);
     const sellersPerPage = 4; //for now, change later to 10
     const pagesVisited = pageNumber * sellersPerPage;
-
-    const displaySellers = seller.slice(pagesVisited, pagesVisited + sellersPerPage).map((user) => (
-
-        <div className="sell-fill-group" key={user._id}>
-                <div className="sell-fill-header">
-                    <img src={user.image} alt={user.name} />
-                </div>
-                <div className="sell-fill-body">
-                <Link to={`../seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
-                    <span className="follow"> Follow</span>
-                    <span className="date">Member since: {(user.createdAt).slice(0, 10)}</span>
-                </div>
-            </div>
-        ));
 
     const pageCount = Math.ceil(seller.length / sellersPerPage);
 
@@ -34,7 +18,9 @@ const SellFilter = ({seller}) => {
     return (
         <>
     <div className="sell-fill-cards">
-        {displaySellers}
+        {seller.slice(pagesVisited, pagesVisited + sellersPerPage).map((user) => (
+            <SellFilterInfo key={user._id} user ={user}/>
+))}
     </div>
       <ReactPaginate className="filter-pagination"
         previousLabel = {"Prev"}

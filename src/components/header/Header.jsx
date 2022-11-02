@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faHome, faLock, faPhone, faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faHome, faLock, faPhone, faShoppingBag, faShoppingCart, faUser } from '@fortawesome/free-solid-svg-icons'
 import '../../pages/home/home.css'
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Store } from "../../Store";
 
 const Header = () => {
 
     const navigate = useNavigate();
 
     const userInfo = localStorage.getItem("userInfo");
+
+    const { state, dispatch: ctxDispatch } = useContext(Store);
+    const { cart, wish } = state
 
     const signouthandler = () => {
         localStorage.removeItem("userInfo");
@@ -35,13 +39,13 @@ const Header = () => {
 
                 <div className="header-action">
 
-                    {
-                    userInfo ? <Link to="/account"><FontAwesomeIcon icon={faHome}/></Link> : <Link to="/"><FontAwesomeIcon icon={faHome}/></Link>
-                    }
-
-                    <Link to="/follow"><FontAwesomeIcon icon={faUser} /><span className="header-cart-badge">0</span></Link>
-
-                    <Link to="/cart"><FontAwesomeIcon icon={faShoppingBag} /><span className="header-cart-badge">0</span></Link>
+                    {userInfo && (
+                        <>
+                            <Link to="/account"><FontAwesomeIcon icon={faHome}/></Link>
+                            <Link to="/follow"><FontAwesomeIcon icon={faUser} /> {wish.wishItems.length ? (<span className="header-cart-badge"> {wish.wishItems.length}</span>) : (<span className="header-cart-badge"> 0 </span>)}</Link>
+                            <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="header-cart-badge">0</span></Link>
+                        </>
+                    )}
 
                     {
                         userInfo ? (<span className="logout" to="#signout" onClick={signouthandler}><FontAwesomeIcon icon={faLock} />Logout</span>) : (<Link to="/login"><FontAwesomeIcon icon={faLock} />Login</Link>)

@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import LatestSeller from "./LatestSeller";
 
 const Latest = () => {
 
@@ -57,18 +58,7 @@ const Latest = () => {
 
                     {/*I only want last 6 members, not all*/}
                     {users.slice(-6).map((user) => (
-
-                    <div className="sellers-group" key={user._id}>
-                        <div className="sellers-header">
-                            <img src={user.image} alt={user.name} />
-                        </div>
-                        <div className="sellers-body">
-                            <Link to={`seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="follow"> Follow</span>
-                            <span className="date">Member since: {(user.createdAt).slice(0, 10)}</span>
-                        </div>
-                    </div>
-                    
+                        <LatestSeller key={user._id} user={user} />
                     ))}
 
                 </div>
