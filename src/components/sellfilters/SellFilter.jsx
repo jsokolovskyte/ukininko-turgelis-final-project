@@ -8,7 +8,7 @@ import ReactPaginate from "react-paginate";
 const SellFilter = ({seller}) => {
 
     const [pageNumber, setPageNumber] = useState(0);
-    const sellersPerPage = 2; //for now, change later to 10
+    const sellersPerPage = 4; //for now, change later to 10
     const pagesVisited = pageNumber * sellersPerPage;
 
     const displaySellers = seller.slice(pagesVisited, pagesVisited + sellersPerPage).map((user) => (

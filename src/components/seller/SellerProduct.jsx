@@ -1,44 +1,46 @@
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const FilterProduct = ({products}) => {
+const SellerProduct = ({product}) => {
 
     const [pageNumber, setPageNumber] = useState(0);
-    const sellersPerPage = 15; 
-    const pagesVisited = pageNumber * sellersPerPage;
+    const productsPerPage = 6;
+    const pagesVisited = pageNumber * productsPerPage;
 
-    const displayProducts = products.slice(pagesVisited, pagesVisited + sellersPerPage).map((product) => (
-        <div className="filter-card" key={product._id}>
+    const displayProduct = product.slice(pagesVisited, pagesVisited + productsPerPage).map((pro) => (
+
+        <div className="filter-card">
             <div className="card-header">
-                <img src={product.image} alt={product.name} />
-                <Link to={`../seller/${product.sellerId}`}> <img className="card-sellers" src={product.sellerImage} alt={product.seller} /></Link>
+                <img src={pro.image} alt={pro.name} />
             </div>
             <div className="card-body">
-                <Link to={`../${product.slug}`}>{product.name} <FontAwesomeIcon icon={faEye} /></Link>
-                <span className="category"> {product.category}</span>
-                <span className="price"> {(product.price).toFixed(2)}(€/kg)</span>
+                <Link to={`../${pro.slug}`}>{pro.name} <FontAwesomeIcon icon={faEye} /></Link>
+                <span className="category"> {pro.category}</span>
+                <span className="price"> {(pro.price).toFixed(2)}(€/kg)</span>
             </div>
             <div className="card-footer">
-                    <button>Add to cart</button>
+                <button>Add to cart</button>
             </div>
         </div>
+
         ));
 
-    const pageCount = Math.ceil(products.length / sellersPerPage);
+    const pageCount = Math.ceil(product.length / productsPerPage);
 
     const handlePageClick = ({selected}) => {
         setPageNumber(selected);
     }
 
-    return(
+    return (
         <>
-             <div className="filter-cards">
-                {displayProducts}
+            <div className="filter-cards">
+                {displayProduct}
             </div>
-                <ReactPaginate className="filter-pagination"
+            <ReactPaginate className="filter-pagination"
                 previousLabel = {"Prev"}
                 nextLabel = {"Next"}
                 breakLabel = {"..."}
@@ -57,9 +59,9 @@ const FilterProduct = ({products}) => {
                 breakClassName = {"pagi-item"}
                 breakLinkClassName = {"pagi-link"}
                 disabledClassName = {"disabledPagi"}
-                />  
+            />  
         </>
     )
 }
 
-export default FilterProduct;
+export default SellerProduct;

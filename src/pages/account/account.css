@@ -165,3 +165,28 @@
     color: rgba(20, 55, 20, 0.677);
 }
 
+.add-btn {
+    width: fit-content;
+    display: block;
+    margin: 0 0 30px auto;
+    padding: 10px;
+    background-color: rgba(20, 55, 20, 0.677);
+    color: whitesmoke;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    letter-spacing: 1.2px;
+    transition: all 0.5s;
+    box-shadow: 0 0 5px rgb(61 61 61);
+}
+
+.add-btn:hover {
+    color: rgba(20, 55, 20, 0.677);
+    background-color: whitesmoke;
+}
+
+.form-image.product img {
+    width: 90px;
+    height: auto;
+}

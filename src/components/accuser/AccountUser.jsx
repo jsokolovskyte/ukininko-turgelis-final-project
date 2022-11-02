@@ -1,15 +1,19 @@
-import { faEye, faPencil, faRefresh, faTrash, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faRefresh, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios"
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Passwords from "../forms/Passwords.jsx";
+import AddProduct from "./AddProduct.jsx";
+import UserProduct from "./UserProduct.jsx";
 
 const AccountUser = () => {
 
     const navigate = useNavigate();
 
     const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
+
+    const id = userInfo._id;
 
     const [name, setName] = useState(userInfo.name);
     const [email, setEmail] = useState(userInfo.email);
@@ -21,13 +25,30 @@ const AccountUser = () => {
     const [previewImage, setPreviewImage] = useState(false);
 
     const [open, setOpen] = useState(false);
+    const [openAdd, setOpenAdd] = useState(false);
+
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
         if(!localStorage.getItem("userInfo")) {
             localStorage.getItem("userInfo");
             navigate("/");
         }
-    })
+
+        const fetchData = async () => {
+            try {
+
+                const res = await axios.get(`/api/products/seller/${id}`);
+                console.log(res.data)
+                setProduct(res.data)
+
+            } catch(error) {
+                console.log("error!")
+            }
+        }
+        fetchData();
+
+    }, [navigate, id])
 
     const handlerUpdate = async (e) => {
         e.preventDefault();
@@ -113,6 +134,7 @@ const AccountUser = () => {
                         <button>{uploadingImage ? "Uploading..." : "Upload"}</button>
                         </div>
                     </form>
+
                     <div className="form-row account">
                         <form onSubmit={handlerUpdate}>
                             <div className="form-group">
@@ -147,181 +169,9 @@ const AccountUser = () => {
 
                 <div className="account-group">
                     <h2 className="account-subtitle">My Products</h2>
+                    <button className="add-btn" onClick={() => setOpenAdd(true)}>Add New Product</button>
                     <div className="account-products">
-                    <div className="filter-cards">
-                <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/melon.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Melon <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Fruit</span>
-                            <span className="price"> 1.49(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/tomato.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Tomato <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.99(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/apple.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Apple <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Fruit</span>
-                            <span className="price"> 0.49(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/beetroot.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Beetroot <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.49(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/carrot.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Carrot <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.39(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/cucumber.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Cucumber <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.79(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/potato.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Potato <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.39(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/pumpkin.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Pumpkin <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 0.49(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/strawberry.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Strawberry <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Fruit</span>
-                            <span className="price"> 1.49(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/pear.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Pear <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Fruit</span>
-                            <span className="price"> 0.89(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-
-                    <div className="filter-card">
-                        <div className="card-header">
-                            <img src="./assets/images/products/lettuce.png" alt="" />
-                        </div>
-                        <div className="card-body">
-                            <Link to="/">Lettuce <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> Vegetable</span>
-                            <span className="price"> 1.39(€/kg)</span>
-                        </div>
-                        <div className="card-footer-account">
-                            <button><FontAwesomeIcon icon={faPencil} /> Edit</button>
-                            <button><FontAwesomeIcon icon={faTrash} /> Delete</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="filter-pagination">
-                    <ul>
-                        <li ><Link to="#">Prev</Link></li>
-                        <li className="pagi-active"><Link to="#">1</Link></li>
-                        <li ><Link to="#">Next</Link></li>
-                    </ul>
-                </div>
+                        <UserProduct product={product}/>
                     </div>
 
                     <h2 className="account-subtitle">My Orders</h2>
@@ -340,7 +190,7 @@ const AccountUser = () => {
                         <li ><Link to="#">Next</Link></li>
                     </ul>
                 </div>
-
+                {openAdd && <AddProduct setOpenAdd={setOpenAdd} />}
                 </div>
             </div>
         </div>
