@@ -29,14 +29,17 @@ const SellFilters = () => {
 
     return (
         <div className="sell-fill-row">
-            <div className="sell-fill-col">
-                <input type="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
+            {seller.length === 0 ? (<h2 className="info">There are no sellers yet </h2>) : (
+                <>
+                    <div className="sell-fill-col">
+                        <input type="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value)} />
+                    </div>
 
-            </div>
-
-            <div className="sell-fill-col">
-                <SellFilter seller={search(SellFilter)}/>
-            </div>
+                    <div className="sell-fill-col">
+                        <SellFilter seller={search(SellFilter)}/>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

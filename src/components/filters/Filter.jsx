@@ -52,26 +52,28 @@ const Filter = () => {
 
     return (
         <div className="filter-row">
-            <div className="filter-col">
-                <div className="filter-group">
-                    <button onClick={handleReset}>All</button>
-                    {category.map((cat) => (
-                        <>
-                        <button onClick={() => filterResult(cat.name) }>{cat.name}</button>
-                        </>
-                    ))}
+            {products.length === 0 ? (<h2 className="info">There are no products yet! </h2>) : (  
+                <>
+                    <div className="filter-col">
+                        <div className="filter-group">
+                            <button onClick={handleReset}>All</button>
+                            {category.map((cat) => (
+                                <>
+                                <button onClick={() => filterResult(cat.name) }>{cat.name}</button>
+                                </>
+                            ))}
+                        </div>
 
-                </div>
+                        <div className="filter-group">
+                            <input type="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value)}/>
+                        </div>
+                    </div>
 
-                <div className="filter-group">
-                    <input type="search" placeholder="Search..." onChange={(e) => setQuery(e.target.value)}/>
-                    <button> <FontAwesomeIcon icon={faSearch} /> </button>
-                </div>
-            </div>
-
-            <div className="filter-col">
-               <FilterProduct products={search(FilterProduct)}/>
-            </div>
+                    <div className="filter-col">
+                    <FilterProduct products={search(FilterProduct)}/>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

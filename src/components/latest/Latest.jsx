@@ -35,33 +35,40 @@ const Latest = () => {
         <div className="latest-row">
             <div className="latest-col">
                 <h2>new fresh products</h2>
-                <div className="latest-products">
-
-                    {products.slice(-3).map((product) => (
-                    <div className="latest-group" key={product._id}>
-                        <div className="latest-header">
-                            <img src={product.image} alt={product.name} />
+                {products.length === 0 ? (<h2 className="info">There are no New Products! </h2>) : (  
+                    <>
+                        <div className="latest-products">
+                            {products.slice(-3).map((product) => (
+                            <div className="latest-group" key={product._id}>
+                                <div className="latest-header">
+                                    <img src={product.image} alt={product.name} />
+                                </div>
+                                <div className="latest-body">
+                                    <Link to={`${product.slug}`}>{product.name} <FontAwesomeIcon icon={faEye} /></Link>
+                                    <span className="category"> {product.category}</span>
+                                    <span className="price"> {(product.price).toFixed(2)}(€/kg)</span>
+                                </div>
+                            </div>
+                            ))}
                         </div>
-                        <div className="latest-body">
-                            <Link to={`${product.slug}`}>{product.name} <FontAwesomeIcon icon={faEye} /></Link>
-                            <span className="category"> {product.category}</span>
-                            <span className="price"> {(product.price).toFixed(2)}(€/kg)</span>
-                        </div>
-                    </div>
-                    ))}
-                </div>
+                    </>
+                )}
             </div>
 
             <div className="latest-col">
                 <h2>newly registered sellers. check them out!</h2>
-                <div className="latest-sellers">
+                {users.length === 0 ? (<h2 className="info">There are no New Sellers yet! </h2>) : (  
+                    <>
+                        <div className="latest-sellers">
 
-                    {/*I only want last 6 members, not all*/}
-                    {users.slice(-6).map((user) => (
-                        <LatestSeller key={user._id} user={user} />
-                    ))}
+                            {/*I only want last 6 members, not all*/}
+                            {users.slice(-6).map((user) => (
+                                <LatestSeller key={user._id} user={user} />
+                            ))}
 
-                </div>
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     )

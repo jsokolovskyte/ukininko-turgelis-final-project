@@ -19,7 +19,7 @@ const UserProduct = ({product}) => {
             <div className="filter-cards">
                 
                 {product.slice(pagesVisited, pagesVisited + productsPerPage).map((pro) => (
-                    <ProductItem pro={pro} />
+                    <ProductItem key={pro._id} pro={pro} />
                 ))
                 }
 

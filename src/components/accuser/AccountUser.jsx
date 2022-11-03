@@ -171,7 +171,7 @@ const AccountUser = () => {
                     <h2 className="account-subtitle">My Products</h2>
                     <button className="add-btn" onClick={() => setOpenAdd(true)}>Add New Product</button>
                     <div className="account-products">
-                        <UserProduct product={product}/>
+                        {product.length === 0 ? (<h2 className="info">You have no Products yet! </h2>) : (  <UserProduct product={product}/>)}
                     </div>
 
                     <h2 className="account-subtitle">My Orders</h2>

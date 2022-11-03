@@ -16,6 +16,8 @@ const Header = () => {
 
     const signouthandler = () => {
         localStorage.removeItem("userInfo");
+        localStorage.removeItem("cartItems");
+        localStorage.removeItem("wishItems")
         alert("You have logged out");
         navigate("/login");
     }
@@ -43,7 +45,7 @@ const Header = () => {
                         <>
                             <Link to="/account"><FontAwesomeIcon icon={faHome}/></Link>
                             <Link to="/follow"><FontAwesomeIcon icon={faUser} /> {wish.wishItems.length ? (<span className="header-cart-badge"> {wish.wishItems.length}</span>) : (<span className="header-cart-badge"> 0 </span>)}</Link>
-                            <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} /><span className="header-cart-badge">0</span></Link>
+                            <Link to="/cart"><FontAwesomeIcon icon={faShoppingCart} />{cart.cartItems.length ? (<span className="header-cart-badge"> {cart.cartItems.length}</span>) : (<span className="header-cart-badge"> 0 </span>)}</Link>
                         </>
                     )}
 

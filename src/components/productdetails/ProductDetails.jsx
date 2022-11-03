@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios"
+import { Store } from "../../Store";
 
 const ProductDetails = () => {
+
+    const { state, dispatch: ctxDispatch } = useContext(Store);
+    const { cart } = state;
 
     const [product, setProduct] = useState([]);
 
@@ -24,16 +28,25 @@ const ProductDetails = () => {
             }
         }
         fetchData();
-    }, [slug])
+    }, [slug]);
 
-        //to find user's id
-        // const location = useLocation();
-        // // console.log(location);
-        // const id = location.pathname.split(":")[1];
-        // console.log(id)
+    const existUser = localStorage.getItem("userInfo")
+
+    const addToCart = () => {
+
+        if(!existUser) {
+            window.alert("Sorry. You must log in.")
+        } else {
+
+            const existItem = cart.cartItems.find((x) => x._id === product._id);
+            const quantity = existItem ? existItem.quantity + 1 : 1;
     
-        // const {product} = useFetch(`/api/products/${id}`)
-        // console.log(product);
+            ctxDispatch({
+                type: "CART_ADD_ITEM",
+                payload: { ...product, quantity}
+            })
+        }
+    }
 
     return (
         <div className="product-row">
@@ -53,7 +66,7 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="product-add">
-                    <button>Add to Cart</button>
+                    <button onClick={addToCart}>Add to Cart</button>
                 </div>
 
             </div>

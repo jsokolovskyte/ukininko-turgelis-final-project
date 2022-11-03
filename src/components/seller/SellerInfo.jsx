@@ -62,11 +62,11 @@ const SellerInfo = () => {
 
     const sellerExists = wish.wishItems.find((x) => x._id === seller._id)
 
-    const handlerUnfollow = (user) => {
+    const handlerUnfollow = (seller) => {
 
         ctxDispatch({
             type: "WISH_REMOVE_ITEM",
-            payload: {...user, user },
+            payload: seller,
         });
 
     }
@@ -92,9 +92,13 @@ const SellerInfo = () => {
 
             <div className="seller-col">
                 <h2 className="seller-title">All products of the Seller {seller.name}</h2>
-                <div className="seller-products">
-                    <SellerProduct product={product} />
-                </div>
+                {product.length === 0 ? (<h2 className="info">This seller has no Products yet! </h2>) : (  
+                    <>
+                        <div className="seller-products">
+                            <SellerProduct product={product} />
+                        </div>
+                    </>
+                )}
 
             </div>
         </div>
