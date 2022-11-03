@@ -1,12 +1,16 @@
 import { faEye, faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Store } from "../../Store";
+import CheckOut from "./CheckOut";
 
 const CartItems = () => {
 
     const navigate = useNavigate();
+
+    const [openCheckout, setOpenCheckout] = useState(false);
 
     useEffect(() => {
 
@@ -107,11 +111,12 @@ const CartItems = () => {
                         </div>
 
                         <div className="bill-btn">
-                            <button>Check Out</button>
+                            <button onClick={() => setOpenCheckout(true)}> Check Out</button>
                         </div>
                     </div>
                 </div>
             </div>
+            {openCheckout && <CheckOut cartItems={cartItems} itemsPrice={itemsPrice} taxPrice={taxPrice} totalPrice={totalPrice} setOpenCheckout={setOpenCheckout} />}
         </div>
     )
 }
