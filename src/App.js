@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
 import OrderInfo from './components/accuser/OrderInfo';
+import UserInfoOrder from './components/accuser/UserInfoOrder';
 import Account from './pages/account/Account';
 import Cart from './pages/cart/Cart';
 import Follow from './pages/follow/Follow';
@@ -29,6 +30,7 @@ function App() {
       <Route path='/cart' element={ <Cart />} />
       <Route path='/account' element={ <Account />} />
       <Route path='/order/:id' element={ <OrderInfo />} />
+      <Route path='/userorder/:id' element={ <UserInfoOrder />} />
     </Routes>
    </Router>
    </>

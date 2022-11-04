@@ -263,3 +263,21 @@
 .info-groups span:nth-child(2){
     font-weight: 600;
 }
+
+.account-info{
+    margin-top: 100px;
+}
+
+.user-info-row{
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.account-orders .info {
+    font-size: 19px;
+}
+.user-info-row p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}

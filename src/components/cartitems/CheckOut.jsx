@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
 
-const CheckOut = ({setOpenCheckout, cartItems, itemsPrice, taxPrice, totalPrice}) => {
+const CheckOut = ({idSeller, setOpenCheckout, cartItems, itemsPrice, taxPrice, totalPrice}) => {
 
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ const CheckOut = ({setOpenCheckout, cartItems, itemsPrice, taxPrice, totalPrice}
 
         try{
 
-            const {data} = await axios.post(`/api/orders/`, { 
+            const {data} = await axios.post(`/api/orders`, { 
                 
                 orderItems: cartItems,
                 id: userInfo._id,
@@ -31,6 +31,7 @@ const CheckOut = ({setOpenCheckout, cartItems, itemsPrice, taxPrice, totalPrice}
                 email: email,
                 address: address,
                 phone: phone,
+                sellerId: idSeller,
                 itemsPrice: itemsPrice,
                 taxPrice: taxPrice,
                 totalPrice: totalPrice,

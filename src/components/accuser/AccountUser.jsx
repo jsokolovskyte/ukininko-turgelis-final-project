@@ -4,6 +4,7 @@ import axios from "axios"
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Passwords from "../forms/Passwords.jsx";
+import AccountUserInfo from "./AccountUserInfo.jsx";
 import AddProduct from "./AddProduct.jsx";
 import Orders from "./Orders.jsx";
 import UserProduct from "./UserProduct.jsx";
@@ -171,6 +172,9 @@ const AccountUser = () => {
                         </form>
                     </div>
                     {open && <Passwords setOpen={setOpen} />}
+                    <div className="account-info">
+                        <AccountUserInfo />
+                    </div>
                 </div>
 
                 <div className="account-group">
@@ -183,7 +187,6 @@ const AccountUser = () => {
                     <h2 className="account-subtitle">My Orders</h2>
                     <div className="account-orders">
                         {orders.length === 0 ? (<h2 className="info">You have no Orders yet! </h2>) : (  <Orders orders={orders}/>)}
-                        
                     </div>
                 {openAdd && <AddProduct setOpenAdd={setOpenAdd} />}
                 </div>

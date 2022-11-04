@@ -22,6 +22,9 @@ const CartItems = () => {
 
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart: {cartItems} } = state;
+    const idSeller = cartItems.map((sellId) => (
+        sellId.sellerId
+    ));
 
 
     const totalItems = cartItems.reduce((a, c) => a + c.quantity, 0) + '/items';
@@ -116,7 +119,7 @@ const CartItems = () => {
                     </div>
                 </div>
             </div>
-            {openCheckout && <CheckOut cartItems={cartItems} itemsPrice={itemsPrice} taxPrice={taxPrice} totalPrice={totalPrice} setOpenCheckout={setOpenCheckout} />}
+            {openCheckout && <CheckOut cartItems={cartItems} idSeller={idSeller} itemsPrice={itemsPrice} taxPrice={taxPrice} totalPrice={totalPrice} setOpenCheckout={setOpenCheckout} />}
         </div>
     )
 }

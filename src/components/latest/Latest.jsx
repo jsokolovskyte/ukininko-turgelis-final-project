@@ -38,7 +38,7 @@ const Latest = () => {
                 {products.length === 0 ? (<h2 className="info">There are no New Products! </h2>) : (  
                     <>
                         <div className="latest-products">
-                            {products.slice(-3).map((product) => (
+                            {products.slice(-3).reverse().map((product) => (
                             <div className="latest-group" key={product._id}>
                                 <div className="latest-header">
                                     <img src={product.image} alt={product.name} />
@@ -62,7 +62,7 @@ const Latest = () => {
                         <div className="latest-sellers">
 
                             {/*I only want last 6 members, not all*/}
-                            {users.slice(-6).map((user) => (
+                            {users.slice(-6).reverse().map((user) => (
                                 <LatestSeller key={user._id} user={user} />
                             ))}
 
