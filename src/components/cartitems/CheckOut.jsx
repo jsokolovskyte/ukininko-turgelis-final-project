@@ -26,6 +26,7 @@ const CheckOut = ({setOpenCheckout, cartItems, itemsPrice, taxPrice, totalPrice}
             const {data} = await axios.post(`/api/orders/`, { 
                 
                 orderItems: cartItems,
+                id: userInfo._id,
                 name: name,
                 email: email,
                 address: address,

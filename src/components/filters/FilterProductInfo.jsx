@@ -43,7 +43,7 @@ const FilterProductInfo = ({product}) => {
                 <div className="card-footer">
                         <button onClick={addToCart}>Add to cart</button>
                 </div>
-        </div>
+            </div>
         </>
     )
 }

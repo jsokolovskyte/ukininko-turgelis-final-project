@@ -1,10 +1,11 @@
-import { faEye, faRefresh, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faRefresh, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios"
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Passwords from "../forms/Passwords.jsx";
 import AddProduct from "./AddProduct.jsx";
+import Orders from "./Orders.jsx";
 import UserProduct from "./UserProduct.jsx";
 
 const AccountUser = () => {
@@ -28,6 +29,7 @@ const AccountUser = () => {
     const [openAdd, setOpenAdd] = useState(false);
 
     const [product, setProduct] = useState([]);
+    const [orders, setOrders] = useState([]);
 
     useEffect(() => {
         if(!localStorage.getItem("userInfo")) {
@@ -41,6 +43,10 @@ const AccountUser = () => {
                 const res = await axios.get(`/api/products/seller/${id}`);
                 console.log(res.data)
                 setProduct(res.data)
+
+                const result = await axios.get(`/api/orders/mine/${id}`);
+                console.log(result.data)
+                setOrders(result.data)
 
             } catch(error) {
                 console.log("error!")
@@ -176,20 +182,9 @@ const AccountUser = () => {
 
                     <h2 className="account-subtitle">My Orders</h2>
                     <div className="account-orders">
-                        <h4>Order No: 2242342342 <Link to="/"> <FontAwesomeIcon icon={faEye} /></Link></h4>
-                        <h4>Order No: 2242342342 <Link to="/"> <FontAwesomeIcon icon={faEye} /></Link></h4>
-                        <h4>Order No: 2242342342 <Link to="/"> <FontAwesomeIcon icon={faEye} /></Link></h4>
-                        <h4>Order No: 2242342342 <Link to="/"> <FontAwesomeIcon icon={faEye} /></Link></h4>
-                        <h4>Order No: 2242342342 <Link to="/"> <FontAwesomeIcon icon={faEye} /></Link></h4>
+                        {orders.length === 0 ? (<h2 className="info">You have no Orders yet! </h2>) : (  <Orders orders={orders}/>)}
+                        
                     </div>
-
-                    <div className="filter-pagination">
-                    <ul>
-                        <li ><Link to="#">Prev</Link></li>
-                        <li className="pagi-active"><Link to="#">1</Link></li>
-                        <li ><Link to="#">Next</Link></li>
-                    </ul>
-                </div>
                 {openAdd && <AddProduct setOpenAdd={setOpenAdd} />}
                 </div>
             </div>
